@@ -15,6 +15,21 @@
 			<div class="col-lg-4 order-lg-1 order-sm-2">
 				<!-- Generator Form -->
 				<form id="DATA">
+					
+					<!-- INPUT -->
+					<div class="row">
+						<div class="col-lg-12 col-sm-12">
+							<div class="form-group">
+								<label>Select Theme</label>
+								<select name="THEMES" id="THEMES" class="form-control">
+									<option vlue="0">Select Theme for preview</option>
+									<option value="template-1.html">Template 1</option>
+									<option value="template-2.html">Template 2</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!-- INPUT -->
 					<!-- INPUT -->
 					<div class="row">
 						<div class="col-lg-12 col-sm-12">
@@ -107,7 +122,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-sm-12 mt-2">
 							<div class="form-group">
-								<button type="button" id="OLUSTUR" class="btn btn-block btn-success">Generate</button>
+								
 							</div>
 						</div>
 					</div>
@@ -120,14 +135,13 @@
 					<div class="col-lg-12"><h2 class="text-center">E-Mail Signature Creator</h2></div>
 				</div>
 				<div class="row">
-					<div class="col-lg-3" style="height: 35px;"><img id="MAIN_LOGO" class="img-fluid" height="35"></div>
-					<div class="col-lg-9"><h5 style="margin-top:20px;" id="SIRKET_ADI_CONTAINER">Fill the form</h5></div>
-				</div>
-				<div class="row">
 					<div class="col-lg-12">
 						<div id="ONIZLEME" style="margin-top:25px;padding:10px; border:3px dashed red;background-color: #fff; border-radius:10px; margin-bottom:20px; min-height: 158px;"><h5 class="text-center" style="margin-top:100px">For view HTML preview click to <em>Generate</em>...</h5></div>
 					</div>
-					<div class="col-lg-12">
+					<div class="col-lg-4 text-left">
+						<button type="button" id="OLUSTUR" class="btn btn-block btn-success">Generate</button>
+					</div>
+					<div class="col-lg-4 text-right">
 						<button id="PREVIEW" class="btn btn-secondary" disabled>Preview</button>						
 						<button class="btn btn-primary download-signatura" disabled>Download HTML</button>						
 					</div>

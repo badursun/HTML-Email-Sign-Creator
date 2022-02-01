@@ -5,12 +5,6 @@ jQuery(document).ready(function($) {
     $('.telefon').mask('+90 000 000 00 00');
 	
     // let Template = Template7.compile( $('#MailTemplate').html() );
-	$.get("templates/template-1.html", function (result) {
-	     console.log( result )
-	     Template = Template7.compile( result );
-	     console.log( Template )
-	},'html');
-
 
 	$Body.on('click', '.download-signatura', function(event) {
 	    try {
@@ -30,6 +24,11 @@ jQuery(document).ready(function($) {
 	$Body.on('click', '#OLUSTUR', function(event) {
 		event.preventDefault();
 
+		if( $('option:selected', $('#THEMES')).val() =='0'){
+			Swal.fire('Attention','Select theme first!','error');
+			return false;
+		};
+
 		$('.download-signatura, #PREVIEW').prop('disabled', true);
 		$('#ONIZLEME').html('<center><img src="img/loading.svg" class="img-fluid" style="height:100px;" /><h5>Generating...</h5></center>')
 		
@@ -42,7 +41,6 @@ jQuery(document).ready(function($) {
 			ADSOYAD 		: $Data.ADSOYAD,
 			TITLE 			: $Data.TITLE,
 			EPOSTA 			: ($Data.EPOSTA.length>1 ? $Data.EPOSTA + '@' + $Domain : ''),
-			ADRES 			: $Data.ADRES,
 			MOBIL_TELEFON 	: $Data.CEPTELEFONU,
 			SIRKET_TELEFON 	: $Data.TELEFON,
 			SIRKET_UNVAN	: $Sirket.val(),
@@ -51,7 +49,7 @@ jQuery(document).ready(function($) {
 			QR_CODE 		: '',
 			DOMAIN 			: $Sirket.attr('data-domain')
 		}
-		console.log($TemplateData);
+
 		setTimeout(function(){
 			$('#ONIZLEME').html( Template($TemplateData) );
 			$('.download-signatura, #PREVIEW').prop('disabled', false);
@@ -63,11 +61,27 @@ jQuery(document).ready(function($) {
 		$('#previewModal').modal('show');
 	});
 
-	$Body.on('keyup', '#LOGO', function(event) {
-		event.preventDefault();
-		let $Logo = $(this).val();
+	$Body.on('change', '#THEMES', function(event) {
+		$.get("templates/template-1.html", function (result) {
+		    Template = Template7.compile( result );
+			
+			let $DummyData = {
+				ADSOYAD 		: 'Dr. Lamont Connelly',
+				TITLE 			: 'CEO',
+				EPOSTA 			: 'reginald09@lemke.biz',
+				MOBIL_TELEFON 	: '31896658',
+				SIRKET_TELEFON 	: '31896658',
+				SIRKET_UNVAN	: 'Emard-DuBuque',
+				SIRKET_ADRES	: '90 Yuk Tsai Tsuen, New Territories, Bilzen, 18350',
+				SIRKET_LOGO 	: 'https://www.adjans.com.tr/content/themes/adjans_2020/images/adjans-black.svg',
+				QR_CODE 		: '',
+				DOMAIN 			: 'https://fake-address-nonexist.com/'
+			};
 
-		$('#MAIN_LOGO').attr('src', $Logo);
+			$('#ONIZLEME').html( Template($DummyData) );
+			$('#MODAL_BOX').html( $('#ONIZLEME').html() );
+			$('#previewModal').modal('show');
+		},'html');
 	});
 });
 
