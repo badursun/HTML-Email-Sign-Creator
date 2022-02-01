@@ -6,9 +6,9 @@ jQuery(document).ready(function($) {
 	
     // let Template = Template7.compile( $('#MailTemplate').html() );
 	$.get("../template-1.html", function (result) {
-	     Template = Template7.compile( $(result).text() );
+	     Template = Template7.compile( result );
 	     console.log( Template )
-	});
+	},'html');
 
 
 	$Body.on('click', '.download-signatura', function(event) {
