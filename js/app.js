@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
     $('.telefon').mask('+90 000 000 00 00');
 	
     // let Template = Template7.compile( $('#MailTemplate').html() );
-	$.get("../templates/template-1.html", function (result) {
+	$.get("templates/template-1.html", function (result) {
 	     console.log( result )
 	     Template = Template7.compile( result );
 	     console.log( Template )
