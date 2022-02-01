@@ -5,7 +5,9 @@ jQuery(document).ready(function($) {
     $('.telefon').mask('+90 000 000 00 00');
 	
     // let Template = Template7.compile( $('#MailTemplate').html() );
-
+	/*
+		Download Signature
+	*/
 	$Body.on('click', '.download-signatura', function(event) {
 	    try {
 	    	var isFileSaverSupported = !!new Blob();
@@ -21,6 +23,9 @@ jQuery(document).ready(function($) {
 	    	saveAs(blob, convertToSlug(FileName)+'.html');
 	});
 
+	/*
+		Data Generator
+	*/
 	$Body.on('click', '#OLUSTUR', function(event) {
 		event.preventDefault();
 
@@ -56,11 +61,17 @@ jQuery(document).ready(function($) {
 		},1500);
 	});
 
+	/*
+		Preview
+	*/
 	$Body.on('click', '#PREVIEW', function(event) {
 		$('#MODAL_BOX').html( $('#ONIZLEME').html() );
 		$('#previewModal').modal('show');
 	});
 
+	/*
+		Theme Selection
+	*/
 	$Body.on('change', '#THEMES', function(event) {
 		let $ThemeFile = $('option:selected', $('#THEMES')).val();
 
@@ -86,8 +97,6 @@ jQuery(document).ready(function($) {
 			};
 
 			$('#ONIZLEME').html( Template($DummyData) );
-			$('#MODAL_BOX').html( $('#ONIZLEME').html() );
-			$('#previewModal').modal('show');
 		},'html');
 	});
 });
