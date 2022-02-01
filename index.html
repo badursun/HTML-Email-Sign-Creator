@@ -18,43 +18,11 @@
 			<div class="col-lg-4 order-lg-1 order-sm-2">
 				<!-- Generator Form -->
 				<form id="DATA">
-					<input type="hidden" name="HOST" id="HOST" value="https://ageointernational.com/sign-img/" />
-					<input type="hidden" name="DOMAIN" id="DOMAIN" value="" />
 					<!-- INPUT -->
 					<div class="row">
 						<div class="col-lg-12 col-sm-12">
 							<div class="form-group">
-								<label>Şirket Seçin</label>
-								<select class="form-control" name="SIRKET" id="SIRKET">
-									<option value="0">Şirket Seçin</option>
-									<option value="Ageo International" 
-										data-logo="ageo.png" 
-										data-qr="qrcode-ageo.png" 
-										data-domain="ageointernational.com"
-										data-adres="Kozyatağı Mah, Gülbahar Sok, PS Plaza, No:17/136-137 34742 Kadıköy/İstanbul"
-									>Ageo International</option>
-									<option value="InterSearch Turkey" 
-										data-logo="intersearch.png"  
-										data-qr="qrcode-inter.png" 
-										data-domain="intersearchturkey.com"
-										data-adres="Kozyatağı Mah, Gülbahar Sok, PS Plaza, No:17/136-137 34742 Kadıköy/İstanbul"
-									>InterSearch Turkey</option>
-									<option value="Ageo Recruitment" 
-										data-logo="AgeoRecruitment.png"  
-										data-qr="qrcode-Recruitment.png" 
-										data-domain="ageorecruitment.com"
-										data-adres="Kozyatağı Mah, Gülbahar Sok, PS Plaza, No:17/136-137 34742 Kadıköy/İstanbul"
-									>Ageo Recruitment</option>
-								</select>
-							</div>
-						</div>
-					</div>
-					<!-- INPUT -->
-					<!-- INPUT -->
-					<div class="row">
-						<div class="col-lg-12 col-sm-12">
-							<div class="form-group">
-								<label>Ad Soyad</label>
+								<label>Name Surname</label>
 								<input type="text" name="ADSOYAD" id="ADSOYAD" value="" class="form-control" autocomplete="off" />
 							</div>
 						</div>
@@ -74,15 +42,15 @@
 					<div class="row">
 						<div class="col-lg-12 col-sm-12">
 							<div class="form-group">
-								<label>E-Posta</label>
+								<label>E-Mail</label>
 								<div class="input-group">
 									<input type="text" name="EPOSTA" id="EPOSTA" value="" class="form-control" placeholder="test.user" autocomplete="off"  />
 									<div class="input-group-append">
-										<span class="input-group-text" id="DOMAIN-CONTAINER">Önce Şirket Seçin</span>
+										<span class="input-group-text" id="DOMAIN-CONTAINER">First Write Domain</span>
 									</div>
 								</div>
 							</div>
-							<small>Boş bırakılırsa gözükmez.</small>
+							<small>Blank for hide.</small>
 						</div>
 					</div>
 					<!-- INPUT -->
@@ -90,10 +58,10 @@
 					<div class="row">
 						<div class="col-lg-12 col-sm-12">
 							<div class="form-group">
-								<label>Mobil Telefon</label>
+								<label>Mobile Phone</label>
 								<input type="text" name="CEPTELEFONU" id="CEPTELEFONU" value="+90 " class="form-control telefon" autocomplete="off" />
 							</div>
-							<small>Boş bırakılırsa gözükmez.</small>
+							<small>Blank for hide.</small>
 						</div>
 					</div>
 					<!-- INPUT -->
@@ -101,7 +69,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-sm-12">
 							<div class="form-group">
-								<label>Telefon</label>
+								<label>Phone</label>
 								<input type="text" name="TELEFON" id="TELEFON" value="+90 212 912 46 40" class="form-control telefon" autocomplete="off" />
 							</div>
 						</div>
@@ -111,8 +79,29 @@
 					<div class="row">
 						<div class="col-lg-12 col-sm-12">
 							<div class="form-group">
-								<label>Adres</label>
+								<label>Address</label>
 								<input type="text" name="ADRES" id="ADRES" value="" class="form-control" autocomplete="off" />
+							</div>
+						</div>
+					</div>
+					<!-- INPUT -->
+					<hr />
+					<!-- INPUT -->
+					<div class="row">
+						<div class="col-lg-12 col-sm-12">
+							<div class="form-group">
+								<label>Logo File URL</label>
+								<input type="text" name="LOGO" id="LOGO" value="https://www.adjans.com.tr/content/themes/adjans_2020/images/adjans-black.svg" class="form-control" autocomplete="off" />
+							</div>
+						</div>
+					</div>
+					<!-- INPUT -->
+					<!-- INPUT -->
+					<div class="row">
+						<div class="col-lg-12 col-sm-12">
+							<div class="form-group">
+								<label>Web URL</label>
+								<input type="text" name="DOMAIN" id="DOMAIN" value="https://www.adjans.com.tr/" class="form-control" autocomplete="off" />
 							</div>
 						</div>
 					</div>
@@ -121,7 +110,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-sm-12 mt-2">
 							<div class="form-group">
-								<button type="button" id="OLUSTUR" class="btn btn-block btn-success">İmza Oluştur</button>
+								<button type="button" id="OLUSTUR" class="btn btn-block btn-success">Generate</button>
 							</div>
 						</div>
 					</div>
@@ -132,11 +121,11 @@
 			<div class="col-lg-8 order-lg-2 order-sm-1">
 				<div class="row">
 					<div class="col-lg-3" style="height: 35px;"><img id="MAIN_LOGO" class="img-fluid" height="35"></div>
-					<div class="col-lg-9"><h5 style="margin-top:20px;" id="SIRKET_ADI_CONTAINER">Önce Şirket Seçin!</h5></div>
+					<div class="col-lg-9"><h5 style="margin-top:20px;" id="SIRKET_ADI_CONTAINER">Fill the form</h5></div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<div id="ONIZLEME" style="margin-top:25px;padding:10px; border:3px dashed red;background-color: #fff; border-radius:10px; margin-bottom:20px; min-height: 158px;"><h5 class="text-center" style="margin-top:100px">Önizleme İçin <em>İmza Oluştur</em> butonuna basın...</h5></div>
+						<div id="ONIZLEME" style="margin-top:25px;padding:10px; border:3px dashed red;background-color: #fff; border-radius:10px; margin-bottom:20px; min-height: 158px;"><h5 class="text-center" style="margin-top:100px">For view HTML preview click to <em>Generate</em>...</h5></div>
 					</div>
 					<div class="col-lg-12">
 						<button id="PREVIEW" class="btn btn-secondary" disabled>Preview</button>						
@@ -154,7 +143,7 @@
 	    <div class="modal-dialog modal-lg" role="document">
 	        <div class="modal-content modal-large">
 	            <div class="modal-header" style="background-color: #afafaf;">
-	                <h5 class="modal-title" id="exampleModalLabel">Önizleme</h5>
+	                <h5 class="modal-title" id="exampleModalLabel">HTML Preview</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <span aria-hidden="true">&times;</span>
 	                </button>

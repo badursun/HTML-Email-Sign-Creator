@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
     $('.telefon').mask('+90 000 000 00 00');
 	
     // let Template = Template7.compile( $('#MailTemplate').html() );
-	$.get("../template-1.html", function (result) {
+	$.get("../templates/template-1.html", function (result) {
 	     console.log( result )
 	     Template = Template7.compile( result );
 	     console.log( Template )
@@ -46,9 +46,9 @@ jQuery(document).ready(function($) {
 			MOBIL_TELEFON 	: $Data.CEPTELEFONU,
 			SIRKET_TELEFON 	: $Data.TELEFON,
 			SIRKET_UNVAN	: $Sirket.val(),
-			SIRKET_ADRES	: $Sirket.attr('data-adres'),
-			SIRKET_LOGO 	: ( $Host + $Sirket.attr('data-logo') ),
-			QR_CODE 		: ($Host + $Sirket.attr('data-qr') ),
+			SIRKET_ADRES	: $('#ADRES').val(),
+			SIRKET_LOGO 	: $('#LOGO').val(),
+			QR_CODE 		: '',
 			DOMAIN 			: $Sirket.attr('data-domain')
 		}
 		console.log($TemplateData);
@@ -63,19 +63,11 @@ jQuery(document).ready(function($) {
 		$('#previewModal').modal('show');
 	});
 
-	$Body.on('change', '#SIRKET', function(event) {
+	$Body.on('keyup', '#LOGO', function(event) {
 		event.preventDefault();
-		let $Domain = $('option:selected', $(this) ).attr('data-domain');
-		$('#DOMAIN-CONTAINER').html('@'+ $Domain);
+		let $Logo = $(this).val();
 
-		let $Sirket = $('option:selected', $('#SIRKET'));
-		let $Host 	= $('#HOST').val();
-		$('#MAIN_LOGO').attr('src', $Host + $Sirket.attr('data-logo'));
-
-		let $Adres = $('option:selected', $(this) ).attr('data-adres');
-		$('#ADRES').val($Adres);
-
-		$('#SIRKET_ADI_CONTAINER').html('<strong>'+ $Sirket.val() +'</strong> E-Posta İmzası');
+		$('#MAIN_LOGO').attr('src', $Logo);
 	});
 });
 
