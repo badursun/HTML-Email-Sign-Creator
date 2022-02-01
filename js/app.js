@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
 	
     // let Template = Template7.compile( $('#MailTemplate').html() );
 	$.get("../template-1.html", function (result) {
+	     console.log( result )
 	     Template = Template7.compile( result );
 	     console.log( Template )
 	},'html');
