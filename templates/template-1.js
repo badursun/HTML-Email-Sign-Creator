@@ -1,0 +1,71 @@
+<table border="0" cellspacing="0" cellpadding="0" width="570">
+	<tr>
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td align="left" valign="bottom">
+						<h1 style="padding:0px;margin:0px 0px 6px 0px;color:#1E2E57;font-size:20px;font-family:'Trebuchet MS','Lucida Grande', Tahoma, sans-serif;">{{ADSOYAD}}</h1>
+						<h2 style="padding:0px;margin:0px 0px 6px 0px; font-weight:normal;color:#FF5A00;font-size:14px;font-family:'Trebuchet MS','Lucida Grande', Tahoma, sans-serif;">{{TITLE}}</h2>
+					</td>
+					<td align="right" width="80">
+						{{#js_if "this.LOGO_30_YIL==='1'"}}
+						<img src="https://ageointernational.com/sign-img/Ageo30Yil.png" style="display: block" width="80" />
+						{{/js_if}}
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+<!-- Line -->
+	<tr>
+		<td style="height:3px;padding:0px;margin:0px;line-height:0px;">
+			<hr style="padding: 0px;margin:0px;" />
+		</td>
+	</tr>
+<!-- Line -->
+	<tr>
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td colspan="3" style="padding:4px 0px;margin:0px 0px 0px 0px;color:#1E2E57;font-size:13px;font-family:'Trebuchet MS','Lucida Grande', Tahoma, sans-serif;">{{SIRKET_ADRES}}</td>
+				</tr>
+				<tr>
+					<td style="padding:3px 0px;margin:0px 0px 0px 0px;color:#1E2E57;font-size:13px;font-family:'Trebuchet MS','Lucida Grande', Tahoma, sans-serif;">{{#js_if "this.SIRKET_TELEFON.length > 4"}}<strong>T:</strong> {{SIRKET_TELEFON}}{{/js_if}}</td>
+					<td style="padding:3px 0px;margin:0px 0px 0px 0px;color:#1E2E57;font-size:13px;font-family:'Trebuchet MS','Lucida Grande', Tahoma, sans-serif;">{{#js_if "this.MOBIL_TELEFON.length > 4"}}<strong>M:</strong> {{MOBIL_TELEFON}}{{/js_if}}</td>
+					<td style="padding:3px 0px;margin:0px 0px 0px 0px;color:#1E2E57;font-size:13px;font-family:'Trebuchet MS','Lucida Grande', Tahoma, sans-serif;">{{#js_if "this.EPOSTA.length > 1"}}<strong>E:</strong> {{EPOSTA}}{{/js_if}}</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+<!-- Line -->
+	<tr>
+		<td style="padding: 10px 0px;">
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td align="left">
+						<img src="{{SIRKET_LOGO}}" style="display: block" width="200" />
+					</td>
+					<td align="right">
+						{{#js_if "this.LOGO_SAG_INTER==='1'"}}
+						<img src="https://ageointernational.com/sign-img/member-is-logo.png" style="display: block" width="160" />
+						{{/js_if}}
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+<!-- Line -->
+	<tr>
+		<td>
+			<table>
+				<tr>
+					<td align="left" style="font-size:11px; font-weight: bold; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; color:#a5a5a5;">Personal data you share via e-mail are processed and monitored in accordance with the Personal Data Protection Regulation No:6698 (PDPR). These data are used, stored and transferred to our business partners, customers and authorized public institutions and organizations in order to communicate with you, to evaluate your job application and to establish a contract within the scope of finding a job, and to protect our Company and you from cyber threats. You can apply to our Company to use your rights under article 11 of the PDPR.</td>
+					<td>
+						<img src="{{QR_CODE}}" style="display: block" width="120" />
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+<!-- Line -->
+</table>

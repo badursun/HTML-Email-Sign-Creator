@@ -1,0 +1,6 @@
+.form-control[pattern]:valid {
+	border-color:green;
+}
+.form-control[pattern]:invalid {
+	border-color:red;
+}
