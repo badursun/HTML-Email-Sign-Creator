@@ -1,24 +1,25 @@
 jQuery(document).ready(function($) {
+	let Template;
 	let $Body = $('body');
-    let Template = Template7.compile( $('#MailTemplate').html() );
 
     $('.telefon').mask('+90 000 000 00 00');
+	
+    // let Template = Template7.compile( $('#MailTemplate').html() );
+	$.get("../template-1.html", function (result) {
+	     Template = Template7.compile( $(result).text() );
+	     console.log( Template )
+	});
+
 
 	$Body.on('click', '.download-signatura', function(event) {
-		let $SirketSecimi = $('option:selected', $('#SIRKET')).val();
-		if($SirketSecimi=='0'){
-			Swal.fire('Dikkat','İmza oluşturmak için önce şirket seçin!','error');
-			return false;
-		};
-
 	    try {
 	    	var isFileSaverSupported = !!new Blob();
 	    } catch (e) {
-			Swal.fire('Dikkat','Tarayıcınız Blob işlemine izin vermiyor. Başka bir tarayıcıda deneyin!','error');
+			Swal.fire('Attention','Your browser does not allow the Blob operation. Try it in another browser!','error');
 	      	return false;
 	    };
 	    
-	    let FileName = ''+ $('#ADSOYAD').val() +'_'+ $('option:selected', $('#SIRKET')).val();
+	    let FileName = ''+ $('#ADSOYAD').val();
 	    let htmlContent = '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>'+ $('#ONIZLEME').html() +'</body></html>';
 	    let blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
 	    
@@ -27,14 +28,9 @@ jQuery(document).ready(function($) {
 
 	$Body.on('click', '#OLUSTUR', function(event) {
 		event.preventDefault();
-		let $SirketSecimi = $('option:selected', $('#SIRKET')).val();
-		if($SirketSecimi=='0'){
-			Swal.fire('Dikkat','İmza oluşturmak için önce şirket seçin!','error');
-			return false;
-		};
 
 		$('.download-signatura, #PREVIEW').prop('disabled', true);
-		$('#ONIZLEME').html('<center><img src="/sign-img/loading.svg" class="img-fluid" style="height:100px;" /><h5>İmzanız Oluşturuluyor...</h5></center>')
+		$('#ONIZLEME').html('<center><img src="img/loading.svg" class="img-fluid" style="height:100px;" /><h5>Generating...</h5></center>')
 		
 		let $Data 	= objectifyForm( $('#DATA').serializeArray() );
 		let $Sirket = $('option:selected', $('#SIRKET'));
@@ -51,8 +47,6 @@ jQuery(document).ready(function($) {
 			SIRKET_UNVAN	: $Sirket.val(),
 			SIRKET_ADRES	: $Sirket.attr('data-adres'),
 			SIRKET_LOGO 	: ( $Host + $Sirket.attr('data-logo') ),
-			LOGO_30_YIL 	: $('option:selected', $('#YIL30LOGO')).val(),
-			LOGO_SAG_INTER  : $('option:selected', $('#SAGINTERSEARCH')).val(),
 			QR_CODE 		: ($Host + $Sirket.attr('data-qr') ),
 			DOMAIN 			: $Sirket.attr('data-domain')
 		}
