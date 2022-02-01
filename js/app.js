@@ -62,7 +62,14 @@ jQuery(document).ready(function($) {
 	});
 
 	$Body.on('change', '#THEMES', function(event) {
-		$.get("templates/template-1.html", function (result) {
+		let $ThemeFile = $('option:selected', $('#THEMES')).val();
+
+		if( $ThemeFile =='0'){
+			Swal.fire('Attention','Select theme first!','error');
+			return false;
+		};
+
+		$.get("templates/"+$ThemeFile, function (result) {
 		    Template = Template7.compile( result );
 			
 			let $DummyData = {
